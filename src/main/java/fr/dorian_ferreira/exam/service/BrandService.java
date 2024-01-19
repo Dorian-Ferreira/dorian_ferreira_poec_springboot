@@ -42,13 +42,4 @@ public class BrandService implements DAOServiceInterface<Brand> {
 
         return brandRepository.saveAndFlush(brand);
     }
-
-//    public CountryDTO getDTOById(Long id) {
-//        Country country = getObjectById(id);
-//        CountryDTO dto = new CountryDTO();
-//        dto.setName(country.getName());
-//        dto.setCode(country.getCode());
-//        dto.setNationality(country.getNationality());
-//        return dto;
-//    }
 }

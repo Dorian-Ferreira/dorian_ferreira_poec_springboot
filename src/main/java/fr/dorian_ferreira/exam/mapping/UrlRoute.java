@@ -15,4 +15,8 @@ public class UrlRoute {
     public final static String URL_API_MODEL = URL_API + "/model";
     public final static String URL_API_LISTING = URL_API + "/listing";
     public final static String URL_API_USER = URL_API + "/user";
+
+    public final static String URL_LISTING = "/listing";
+    public final static String URL_LISTING_FORM = "/listing/new";
+
 }

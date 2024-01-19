@@ -33,6 +33,14 @@ public class ListingService implements DAOServiceInterface<Listing> {
         return optionalListing.get();
     }
 
+    public Listing findBySlug(String slug) {
+        Optional<Listing> optionalListing = listingRepository.findBySlug(slug);
+        if (optionalListing.isEmpty()) {
+            throw new NotFoundCentralishException("Listing", "slug", slug);
+        }
+        return optionalListing.get();
+    }
+
     public Listing persist(ListingDTO listingDTO, Long id) {
         if (id != null && listingRepository.findById(id).isEmpty()) {
             throw new NotFoundCentralishException(
@@ -56,12 +64,19 @@ public class ListingService implements DAOServiceInterface<Listing> {
         return listingRepository.saveAndFlush(listing);
     }
 
-//    public CountryDTO getDTOById(Long id) {
-//        Country country = getObjectById(id);
-//        CountryDTO dto = new CountryDTO();
-//        dto.setName(country.getName());
-//        dto.setCode(country.getCode());
-//        dto.setNationality(country.getNationality());
-//        return dto;
-//    }
+    public List<Listing> findLast12() {
+        return listingRepository.findTop12ByOrderByCreatedAtDesc();
+    }
+
+    public ListingDTO getDto() {
+        ListingDTO listingDTO = new ListingDTO();
+
+        listingDTO.setUserId(getRandomBetween(1, 1800));
+
+        return listingDTO;
+    }
+
+    public static long getRandomBetween(int min, int max) {
+        return (long)Math.floor((Math.random() * (max - min)) + min);
+    }
 }

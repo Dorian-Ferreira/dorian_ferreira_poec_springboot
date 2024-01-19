@@ -33,14 +33,14 @@ public class UserRestController {
         return userService.getObjectById(id);
     }
 
-    @PostMapping(UrlRoute.URL_API_USER)
-    public User persist(@Valid @RequestBody UserDTO userDTO) {
-        return userService.persist(userDTO, null);
-    }
-
-    @PutMapping(UrlRoute.URL_API_USER+"/{id}")
-    public User persist(@Valid @RequestBody UserDTO userDTO, @PathVariable Long id) {
-        return userService.persist(userDTO, id);
-    }
+//    @PostMapping(UrlRoute.URL_API_USER)
+//    public User persist(@Valid @RequestBody UserDTO userDTO) {
+//        return userService.persist(userDTO, null);
+//    }
+//
+//    @PutMapping(UrlRoute.URL_API_USER+"/{id}")
+//    public User persist(@Valid @RequestBody UserDTO userDTO, @PathVariable Long id) {
+//        return userService.persist(userDTO, id);
+//    }
 
 }

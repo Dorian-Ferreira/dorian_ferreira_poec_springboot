@@ -80,13 +80,4 @@ public class UserService implements DAOServiceInterface<User>, UserDetailsServic
         });
         return authorities;
     }
-
-//    public CountryDTO getDTOById(Long id) {
-//        Country country = getObjectById(id);
-//        CountryDTO dto = new CountryDTO();
-//        dto.setName(country.getName());
-//        dto.setCode(country.getCode());
-//        dto.setNationality(country.getNationality());
-//        return dto;
-//    }
 }

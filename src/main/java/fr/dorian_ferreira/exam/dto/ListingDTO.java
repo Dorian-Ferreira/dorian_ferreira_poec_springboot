@@ -1,13 +1,10 @@
 package fr.dorian_ferreira.exam.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Getter
 @Setter
@@ -15,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class ListingDTO {
 
-    @NotBlank
+    @NotNull
     private String title;
 
     @NotNull
@@ -24,7 +21,7 @@ public class ListingDTO {
     @NotNull
     private Long userId;
 
-    @NotBlank
+    @NotNull
     private String description;
 
     @NotNull
