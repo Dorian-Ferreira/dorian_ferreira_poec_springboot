@@ -17,6 +17,7 @@ public class SluggerEventListener implements PreInsertEventListener,
 
     private Slugger slugger;
 
+
     @Override
     public boolean onPreInsert(PreInsertEvent preInsertEvent) {
         return hasSlugify(preInsertEvent.getEntity());
